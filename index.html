@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soft Christian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nb-r">
+    <button class="hamburger" id="ham"><i class="fas fa-bars"></i></button>
+    <div class="logo">
+      <div class="logo-badge">☩</div>
+      <div class="logo-name">Soft Christian <span>|</span> <a class="logo-name" href="https://nabilnagib201.github.io/softweb/">Soft Wep</a> </div>
+    </div>
+  </div>
+  <div class="search-wrap">
+    <input type="search" placeholder="ابحث في الكتاب المقدس، القديسين، الطقوس...">
+    <i class="fas fa-magnifying-glass s-ico"></i>
+  </div>
+  <div class="nb-l">
+    <div class="lang-pill"><i class="fas fa-globe"></i> AR</div>
+    <div class="avatar">ن</div>
+    <button class="btn-guest">+ ضيف</button>
+  </div>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sb-body">
+    <div class="sb-grp">
+      <span class="sb-lbl">القائمة الرئيسية</span>
+      <div class="sb-item active" data-p="home"><i class="fas fa-house"></i> الرئيسية</div>
+    </div>
+    <div class="sb-grp">
+      <span class="sb-lbl">العبادة</span>
+      <div class="sb-item" data-p="bible"><i class="fas fa-book-bible"></i> الكتاب المقدس<span class="sb-badge">تحت تعديل</span></div>
+      <div class="sb-item" data-p="tafsir"><i class="fas fa-book-open"></i> التفسير والتأمل<span class="sb-badge">تحت تعديل</span></div>
+      <div class="sb-item" data-p="fathers"><i class="fas fa-comment-dots"></i> آباء الكنيسة<span class="sb-badge">تحت تعديل</span></div>
+      <div class="sb-item" data-p="prayers"><i class="fas fa-hands-praying"></i> الصلوات والأجبية<span class="sb-badge">تحت تعديل</span></div>
+    </div>
+    <div class="sb-grp">
+      <span class="sb-lbl">الميديا</span>
+      <div class="sb-item" data-p="mass"><i class="fas fa-church"></i> مواعيد القداسات <span class="sb-badge">تحت تعديل</span></div>
+      <div class="sb-item" data-p="hymns"><i class="fas fa-headphones"></i> الترانيم الكنسية<span class="sb-badge">تحت تعديل</span></div>
+      <div class="sb-item" data-p="radio"><i class="fas fa-tower-broadcast"></i> إذاعة مسيحية<span class="sb-badge">تحت تعديل</span></div>
+    </div>
+    <div class="sb-grp">
+      <span class="sb-lbl">المعرفة والأدوات</span>
+      <div class="sb-item" data-p="calendar"><i class="fas fa-calendar-days"></i> التقويم القبطي <span class="sb-badge">تحت تعديل</span></div>
+      <div class="sb-item" data-p="rosary"><i class="fas fa-circle-dot"></i> المسبحة الإلكترونية<span class="sb-badge">تحت تعديل</span></div>
+      <div class="sb-item" data-p="saints"><i class="fas fa-star"></i> قديسو الكنيسة<span class="sb-badge">تحت تعديل</span></div>
+      <div class="sb-item" data-p="almanac"><i class="fas fa-calendar"></i> التقويم<span class="sb-badge">تحت تعديل</span></div>
+
+    </div>
+  </div>
+  <div class="sb-foot">
+    <button class="btn-login"><i class="fas fa-right-to-bracket"></i> تسجيل الدخول</button>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main" id="main">
+  <div class="top-row">
+    <div class="date-blk">
+      <div class="coptic" id="copticDate">٢٠ بؤونة ١٧٤٢ ش</div>
+      <div class="greg" id="gregDate"></div>
+    </div>
+    <div class="greeting">طابت أوقاتك بنعمة الروح القدس &nbsp;<i class="fas fa-dove"></i></div>
+  </div>
+
+  <div class="mass-card" onclick="openPage('mass')">
+    <div class="mc-l">
+      <div class="church-ico">⛪</div>
+      <div class="mc-info">
+        <div class="mc-sub">القداس القادم</div>
+        <div class="mc-name">القداس الإلهي</div>
+        <div class="mc-loc"><i class="fas fa-location-dot"></i> كنيسة مار جرجس، القاهرة</div>
+      </div>
+    </div>
+    <div class="mc-clock" id="clock">٠٠:٠٠:٠٠</div>
+  </div>
+
+  <div class="sec-ttl"><i class="fas fa-th-large"></i> الخدمات الروحية</div>
+  <div class="cards-grid">
+    <div class="fc" onclick="openPage('bible')">
+      <div class="fc-ico ic-gold"><i class="fas fa-book-bible"></i></div>
+      <div class="fc-ttl">الكتاب المقدس</div>
+      <div class="fc-sub">تصفح الكتاب المقدس بجودة عالية</div>
+      <div class="fc-bg"><i class="fas fa-book-bible"></i></div>
+    </div>
+    <div class="fc" onclick="openPage('encyclopedia')">
+      <div class="fc-ico ic-blue"><i class="fas fa-landmark"></i></div>
+      <div class="fc-ttl">الموسوعة القبطية</div>
+      <div class="fc-sub">المراجع والمصادر والتراث الكنسي</div>
+      <div class="fc-bg"><i class="fas fa-landmark"></i></div>
+    </div>
+    <div class="fc" onclick="openPage('prayers')">
+      <div class="fc-ico ic-green"><i class="fas fa-hands-praying"></i></div>
+      <div class="fc-ttl">أذكار المسيحي</div>
+      <div class="fc-sub">صلوات الصباح والمساء والأجبية</div>
+      <div class="fc-bg"><i class="fas fa-hands-praying"></i></div>
+    </div>
+    <div class="fc hl-g" onclick="openPage('hymns')">
+      <div class="fc-ico ic-purple"><i class="fas fa-headphones"></i></div>
+      <div class="fc-ttl">الترانيم الكنسية</div>
+      <div class="fc-sub">COLLECTION مجموعة الترانيم القبطية المعطرة</div>
+      <div class="fc-bg"><i class="fas fa-headphones"></i></div>
+    </div>
+    <div class="fc hl-o" onclick="openPage('radio')">
+      <div class="fc-ico ic-orange"><i class="fas fa-tower-broadcast"></i></div>
+      <div class="fc-ttl">إذاعة مسيحية</div>
+      <div class="fc-sub">استمع لأجمل الترانيم والخطب مباشر</div>
+      <div class="fc-bg"><i class="fas fa-tower-broadcast"></i></div>
+    </div>
+    <div class="fc" onclick="openPage('tafsir')">
+      <div class="fc-ico ic-pink"><i class="fas fa-book-open-reader"></i></div>
+      <div class="fc-ttl">التفسير</div>
+      <div class="fc-sub">تفسير ميسر لآيات الكتاب المقدس</div>
+      <div class="fc-bg"><i class="fas fa-book-open-reader"></i></div>
+    </div>
+  </div>
+
+  <div class="sec-ttl"><i class="fas fa-chart-pie"></i> ملخص اليوم</div>
+  <div class="sum-grid">
+    <div class="sum-card">
+      <div class="sum-ttl"><i class="fas fa-list-check"></i> وردك اليومي</div>
+      <div class="r-row" onclick="togChk(this)"><div class="chk"></div><span>صلوات الصباح</span></div>
+      <div class="r-row" onclick="togChk(this)"><div class="chk"></div><span>أجبية الساعة الثالثة</span></div>
+      <div class="r-row" onclick="togChk(this)"><div class="chk"></div><span>قراءة الكتاب المقدس</span></div>
+      <div class="r-row" onclick="togChk(this)"><div class="chk"></div><span>صلوات المساء</span></div>
+      <div class="r-row" onclick="togChk(this)"><div class="chk"></div><span>المسبحة اليومية</span></div>
+    </div>
+    <div class="sum-card">
+      <div class="sum-ttl"><i class="fas fa-moon"></i> خطة القراءة السنوية</div>
+      <div class="plan-hint">لم تبدأ بعد · ابدأ قراءتك المخصصة الآن</div>
+      <div class="plan-pct" id="planPct">٠%</div>
+      <div class="bar-bg"><div class="bar-fill" id="barFill"></div></div>
+      <div class="bar-lbl"><span>إنجاز</span><span id="barLbl">٠ / ٣٦٥ يوم</span></div>
+      <div class="plan-today">📖 اليوم: إنجيل يوحنا الإصحاح ١-٣</div>
+    </div>
+    <div class="sum-card">
+      <div class="sum-ttl"><i class="fas fa-church"></i> مواعيد الأجبية اليوم</div>
+      <div class="times-g">
+        <div><div class="ti-n">باكر</div><div class="ti-v">٥:٠٠</div></div>
+        <div><div class="ti-n">الثالثة</div><div class="ti-v">٩:٠٠</div></div>
+        <div><div class="ti-n">السادسة</div><div class="ti-v hi">١٢:٠٠</div></div>
+        <div><div class="ti-n">التاسعة</div><div class="ti-v">٣:٠٠</div></div>
+        <div><div class="ti-n">غروب</div><div class="ti-v">٦:٤٥</div></div>
+      </div>
+      <div class="times-note">— يوم الأحد —</div>
+      <div class="times-note" style="margin-top:4px">القداس الكبير ( ١٢ أجبية )</div>
+    </div>
+  </div>
+</main>
+
+<button class="float-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">☩</button>
+
+<!-- MODAL -->
+<div class="mbak" id="mbak" onclick="mbakClick(event)">
+  <div class="mbox" id="mbox"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
